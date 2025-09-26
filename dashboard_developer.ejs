@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Developer Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-8">
+  <h1 class="text-3xl font-bold mb-4">Welcome Developer, <%= username %>!</h1>
+
+  <div class="space-y-4">
+    <a href="#" class="block bg-blue-700 p-3 rounded">📁 View Assigned Projects</a>
+    <a href="#" class="block bg-green-700 p-3 rounded">📄 View Uploaded Docs</a>
+  </div>
+
+  <a href="/logout" class="inline-block mt-10 text-red-400">Logout</a>
+</body>
+</html>

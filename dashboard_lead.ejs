@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lead Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-8">
+  <h1 class="text-3xl font-bold mb-4">Welcome Lead, <%= username %>!</h1>
+
+  <div class="space-y-6 mt-6">
+
+  <!-- Assign Developer to Project -->
+  <div class="bg-gray-800 p-6 rounded">
+    <h2 class="text-xl font-bold mb-4">👨‍💻 Assign Developer to Project</h2>
+    <form action="/assign_developer" method="POST" class="space-y-4">
+      <div>
+        <label>Project:</label>
+        <select name="project_id" required class="w-full p-2 rounded bg-gray-700">
+          <% projects.forEach(p => { %>
+            <option value="<%= p.id %>"><%= p.name %></option>
+          <% }) %>
+        </select>
+      </div>
+
+      <div>
+        <label>Developer:</label>
+        <select name="developer_id" required class="w-full p-2 rounded bg-gray-700">
+          <% developers.forEach(d => { %>
+            <option value="<%= d.id %>"><%= d.username %></option>
+          <% }) %>
+        </select>
+      </div>
+
+      <button type="submit" class="bg-green-600 px-4 py-2 rounded hover:bg-green-700">
+        Assign Developer
+      </button>
+    </form>
+  </div>
+
+</div>
+
+  <a href="/logout" class="inline-block mt-10 text-red-400">Logout</a>
+</body>
+</html>
